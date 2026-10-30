@@ -456,7 +456,7 @@ These modifications extend the lab's core concept of deploying and serving machi
 
 ### 10. Pydantic Response Model
 
-Implemented Pydantic response models (`Prediction` and `PredictionResponse`) to define and validate the structure of API prediction responses.
+Implemented Pydantic response models (`Prediction` and `PredictResponse`) to define and validate the structure of API prediction responses.
 
 The `/predict` endpoint now uses `response_model=PredictResponse`, extending the original tutorial's `IrisResponse` implementation.
 
