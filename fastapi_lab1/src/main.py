@@ -64,6 +64,16 @@ class WineFeatures(BaseModel):
 
         return self
 
+class Prediction(BaseModel):
+    predicted_class: int
+    class_name: str
+    confidence: float
+    class_probabilities: Dict[str, float]
+
+class PredictResponse(BaseModel):
+    status: str
+    prediction: Prediction
+
 
 # Root endpoint
 @app.get("/")
@@ -121,7 +131,7 @@ def model_info():
 
 
 # Prediction endpoint
-@app.post("/predict")
+@app.post("/predict", response_model=PredictResponse)
 def predict(request: WineFeatures):
     try:
         artifact = app.state.model_artifact
