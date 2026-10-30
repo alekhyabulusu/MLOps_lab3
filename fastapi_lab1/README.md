@@ -435,6 +435,21 @@ The tests verify endpoint responses, model availability, predictions, and valida
 
 These modifications extend the lab's core concept of deploying and serving machine learning models through FastAPI rather than only changing the dataset or model.
 
+### 9. Pydantic Response Model
+
+Implemented Pydantic response models (`WinePrediction` and `WineResponse`) to define and validate the structure of API prediction responses.
+
+The `/predict` endpoint now uses `response_model=WineResponse`, extending the original tutorial's `IrisResponse` implementation.
+
+The response model includes:
+- Predicted class ID
+- Class name
+- Confidence score
+- Class probabilities
+- Prediction status
+
+This modification provides automatic response validation, type consistency, and improved API documentation through Swagger UI.
+
 ## Results
 
 The Decision Tree classifier achieved:
