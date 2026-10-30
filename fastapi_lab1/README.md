@@ -113,6 +113,16 @@ All commands should be executed from the `fastapi_lab1` directory with the virtu
 ```bash
 python -m src.data
 ```
+
+Expected output:
+
+```text
+Wine Dataset Loaded Successfully!
+Training samples: 142
+Testing samples: 36
+Number of features: 13
+```
+
 ### Step 2: Train the Model
 
 ```bash
@@ -151,6 +161,15 @@ The model correctly classified 34 out of 36 test samples.
 
 ```bash
 python -m src.predict
+```
+Expected output:
+
+```text
+Prediction successful!
+Predicted class: 0
+Class name: class_0
+Confidence: 1.0
+Class probabilities: {'class_0': 1.0, 'class_1': 0.0, 'class_2': 0.0}
 ```
 
 ### Step 4: Start the FastAPI Server
@@ -435,11 +454,11 @@ The tests verify endpoint responses, model availability, predictions, and valida
 
 These modifications extend the lab's core concept of deploying and serving machine learning models through FastAPI rather than only changing the dataset or model.
 
-### 9. Pydantic Response Model
+### 10. Pydantic Response Model
 
-Implemented Pydantic response models (`WinePrediction` and `WineResponse`) to define and validate the structure of API prediction responses.
+Implemented Pydantic response models (`Prediction` and `PredictionResponse`) to define and validate the structure of API prediction responses.
 
-The `/predict` endpoint now uses `response_model=WineResponse`, extending the original tutorial's `IrisResponse` implementation.
+The `/predict` endpoint now uses `response_model=PredictResponse`, extending the original tutorial's `IrisResponse` implementation.
 
 The response model includes:
 - Predicted class ID
