@@ -118,4 +118,21 @@ def test_extra_feature(client, valid_wine_features):
         json={"features": invalid_features}
     )
 
+
+
     assert response.status_code == 422
+
+def test_prediction_response_schema(client):
+    response = client.get("/openapi.json")
+
+    assert response.status_code == 200
+
+    schema = response.json()
+
+    prediction_schema = schema["paths"]["/predict"]["post"][
+        "responses"
+    ]["200"]["content"]["application/json"]["schema"]
+
+    assert prediction_schema["$ref"].endswith(
+        "/PredictResponse"
+    )
