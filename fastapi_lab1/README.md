@@ -346,6 +346,8 @@ python -m pytest tests/test_api.py -v
 | `test_valid_prediction` | Verifies successful prediction | 200 |
 | `test_missing_feature` | Rejects missing features | 422 |
 | `test_extra_feature` | Rejects unexpected features | 422 |
+| `test_prediction_response_schema` | Verifies the `/predict` endpoint uses the `PredictResponse` schema in OpenAPI | 200 |
+
 
 ### Test Results
 
@@ -356,8 +358,9 @@ tests/test_api.py::test_model_info_endpoint PASSED
 tests/test_api.py::test_valid_prediction PASSED
 tests/test_api.py::test_missing_feature PASSED
 tests/test_api.py::test_extra_feature PASSED
+tests/test_api.py::test_prediction_response_schema PASSED
 
-6 passed, 1 warning in 2.28s
+7 passed, 1 warning in 2.45s
 ```
 
 All six automated tests passed successfully.
@@ -478,7 +481,7 @@ The Decision Tree classifier achieved:
 | Cross-validation accuracy | 90.22% |
 | Test accuracy | 94.44% |
 | Correct test predictions | 34/36 |
-| Automated tests passed | 6/6 |
+| Automated tests passed | 7/7 |
 
 The model was successfully trained, evaluated, serialized, loaded, and served through FastAPI.
 
