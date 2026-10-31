@@ -363,7 +363,7 @@ tests/test_api.py::test_prediction_response_schema PASSED
 7 passed, 1 warning in 2.45s
 ```
 
-All six automated tests passed successfully.
+All seven automated tests passed successfully.
 
 ## Modifications from the Original Lab
 
@@ -451,7 +451,7 @@ This avoids repeatedly loading the serialized model from disk.
 
 ### 9. Automated API Testing
 
-Added six automated tests using Pytest and FastAPI's TestClient.
+Added seven automated tests using Pytest and FastAPI's TestClient.
 
 The tests verify endpoint responses, model availability, predictions, and validation errors.
 
@@ -485,4 +485,4 @@ The Decision Tree classifier achieved:
 
 The model was successfully trained, evaluated, serialized, loaded, and served through FastAPI.
 
-All four API endpoints were manually tested, and all six automated tests passed.
+All four API endpoints were manually tested, and all seven automated tests passed.
